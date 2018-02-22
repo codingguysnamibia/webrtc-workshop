@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebRTC Workshop</title>
+</head>
+<body>
+	<video id="local-video" autoplay playsinline muted></video>
+	<div id="error-msg"></div>
+	<div class="devices-info">
+		<fieldset>
+			<label for="mics">Microphones:</label>
+		<select id="mics"></select>
+		</fieldset>
+		<fieldset>
+			<label for="speakers">Speakers:</label>
+		<select id="speakers"></select>
+		</fieldset>
+		<fieldset>
+			<label for="cams">Cameras:</label>
+		<select id="cams"></select>
+		</fieldset>
+	</div>
+	</div>
+
+<script type="text/javascript" src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script type="text/javascript" src="video-chat.js"></script>
+</body>
+</html>
