@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebRTC Workshop</title>
+</head>
+<body>
+<div class="devices-info">
+    <fieldset>
+        <label for="mics">Microphones:</label>
+        <select id="mics"></select>
+        <br>
+        <label for="speakers">Speakers:</label>
+        <select id="speakers"></select>
+        <br>
+        <label for="cams">Cameras:</label>
+        <select id="cams"></select>
+        <br><br>
+        <button id="snapshot">Snapshot</button>
+        <button id="mirror">Mirror</button>
+
+        <select id="filter">
+            <option>Select filter</option>
+            <option value="contrast">Contrast</option>
+            <option value="contrast-alt">Contrast alt</option>
+            <option value="sepia">Sepia</option>
+            <option value="blur">Blur</option>
+            <option value="saturate">Saturate</option>
+            <option value="darken">Darken</option>
+            <option value="invert">Invert</option>
+            <option value="lighten">Lighten</option>
+            <option value="hue-rotate">Hue-Rotate</option>
+            <option value="greyscale">Greyscale</option>
+            <option value="opacity">Opacity</option>
+            <option value="fancy">Fancy</option>
+        </select>
+    </fieldset>
+</div>
+
+<hr>
+<button id="start-local-video">Start</button>
+<button id="join-call">Join</button>
+<button id="hang-up">Hang up</button>
+<hr>
+
+<fieldset>
+    <legend>For creating chat</legend>
+    <label for="local-offer">Local offer</label>
+    <textarea id="local-offer"></textarea>
+
+    <label for="remote-answer">Remote answer</label>
+    <textarea id="remote-answer"></textarea>
+    <button id="set-remote-answer">Set</button>
+
+    <label for="ice-candidates-mine">Mine</label>
+    <textarea id="ice-candidates-mine"></textarea>
+
+    <label for="set-ice-candidates-1">Ice Candidates</label>
+    <textarea id="ice-candidates-1"></textarea>
+    <button id="set-ice-candidates-1">Set</button>
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend>For joining chat</legend>
+    <label for="remote-offer">Remote offer</label>
+    <textarea id="remote-offer"></textarea>
+    <button id="set-remote-offer">Generate answer</button>
+
+    <label for="local-answer">Local answer</label>
+    <textarea id="local-answer"></textarea>
+
+    <label for="ice-candidates-mine-2">Mine</label>
+    <textarea id="ice-candidates-mine-2"></textarea>
+
+    <label for="set-ice-candidates-2">Ice Candidates</label>
+    <textarea id="ice-candidates-2"></textarea>
+    <button id="set-ice-candidates-2">Set</button>
+</fieldset>
+
+<hr>
+<button id="attach">Attach</button>
+<video id="local-video" autoplay playsinline muted></video>
+<video id="remote-video" autoplay playsinline muted></video>
+<div id="error-msg"></div>
+<div>
+    <canvas id="canvas"></canvas>
+</div>
+
+<script type="text/javascript" src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script type="text/javascript" src="video-chat.js"></script>
+
+<style type="text/css">
+    .contrast {
+        filter: contrast(3);
+    }
+
+    .contrast-alt {
+        filter: contrast(50%);
+    }
+
+    .sepia {
+        filter: sepia(100%);
+    }
+
+    .blur {
+        filter: blur(10px);
+    }
+
+    .saturate {
+        filter: saturate(1.2);
+    }
+
+    .darken {
+        filter: brightness(.3);
+    }
+
+    .invert {
+        filter: invert(.7);
+    }
+
+    .lighten {
+        filter: brightness(120%);
+    }
+
+    .hue-rotate {
+        filter: hue-rotate(180);
+    }
+
+    .greyscale {
+        filter: grayscale(1);
+    }
+
+    .sepia {
+        filter: sepia(100%);
+    }
+
+    .opacity {
+        filter: opacity(.7);
+    }
+
+    .fancy {
+        filter: contrast(1.1) sepia(.8) saturate(1.8) blur(4px);
+    }
+
+    .mirror {
+        transform: rotateY(180deg);
+    }
+</style>
+</body>
+</html>

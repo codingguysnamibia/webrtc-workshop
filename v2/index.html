@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebRTC Workshop</title>
+</head>
+<body>
+	<video id="local-video" autoplay playsinline muted></video>
+	<div id="error-msg"></div>
+	<div class="devices-info">
+		<fieldset>
+			<label for="mics">Microphones:</label>
+			<select id="mics"></select>
+		</fieldset>
+		<fieldset>
+			<label for="speakers">Speakers:</label>
+			<select id="speakers"></select>
+		</fieldset>
+		<fieldset>
+			<label for="cams">Cameras:</label>
+			<select id="cams"></select>
+		</fieldset>
+	</div>
+
+	<button>Save</button>
+<fieldset>
+	<label for="filter">Filter</label>
+	<select id="filter">
+		<option value="contrast">Contrast</option>
+		<option value="contrast-alt">Contrast alt</option>
+		<option value="sepia">Sepia</option>
+		<option value="blur">Blur</option>
+		<option value="saturate">Saturate</option>
+		<option value="darken">Darken</option>
+		<option value="invert">Invert</option>
+		<option value="lighten">Lighten</option>
+		<option value="hue-rotate">Hue-Rotate</option>
+		<option value="greyscale">Greyscale</option>
+		<option value="opacity">Opacity</option>
+		<option value="fancy">Fancy</option>
+	</select>
+</fieldset>
+	<div>
+		<canvas id="canvas"></canvas>
+	</div>
+
+	<script type="text/javascript" src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+	<script type="text/javascript" src="video-chat.js"></script>
+
+	<style type="text/css">
+	.contrast {
+		filter: contrast(3);
+	}
+
+	.contrast-alt {
+		filter: contrast(50%);
+	}
+
+	.sepia{
+		filter: sepia(100%);
+	}
+	.blur{
+		filter: blur(10px);
+	}
+
+	.saturate{
+		filter: saturate(1.2);
+	}
+
+	.darken {
+		filter: brightness(.3);
+	}
+	.invert {
+		filter: invert(.7);
+	}
+
+	.lighten {
+		filter: brightness(120%);
+	}
+
+	.hue-rotate {
+		filter: hue-rotate(180);
+	}
+
+	.greyscale{
+		filter: grayscale(1);
+	}
+
+	.sepia{
+		filter: sepia(100%);
+	}
+	.opacity {
+		filter: opacity(.7);
+	}
+
+	.fancy {
+			filter: contrast(1.1) sepia(.8) saturate(1.8) blur(4px);
+	}
+</style>
+</body>
+</html>
